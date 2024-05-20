@@ -3,6 +3,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with
 
 ## Getting Started
 
+Install dependencies:
+```bash
+npm install
+# or
+yarn
+```
+
 First, run the development server:
 
 ```bash
