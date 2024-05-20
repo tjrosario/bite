@@ -8,6 +8,7 @@ export interface Item {
   price: number;
   quantity?: number;
   showDescription?: boolean;
+  showPrice?: boolean;
   width?: number;
 }
 

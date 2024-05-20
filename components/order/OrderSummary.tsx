@@ -1,4 +1,4 @@
-export default function OrderSummary({ summary }) {
+export default function OrderSummary({ summary }: { summary: any }) {
   return (
     <div>
       <div>Subtotal: ${summary.totals.subtotal / 100}</div>

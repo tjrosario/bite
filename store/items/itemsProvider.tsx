@@ -16,7 +16,7 @@ Items.displayName = 'Items';
 export const useItems = () => useContext(Items);
 
 export const ItemsProvider = ({ children }: { children: ReactNode }) => {
-  const [itemsState, dispatch] = useReducer<any>(itemsReducer, initialState);
+  const [itemsState, dispatch] = useReducer(itemsReducer, initialState);
 
   const itemsActions = {
     getItems: () =>

@@ -1,8 +1,6 @@
 import { GET_ITEMS, UPDATE_ITEMS } from '@/store/items';
 
-import { ItemsState } from '@/types/item';
-
-export const initialState: ItemsState = { items: [] };
+export const initialState: any = { items: [] };
 
 export const itemsReducer = (state = initialState, action: any) => {
   switch (action.type) {

@@ -5,7 +5,7 @@ import Button from '@/components/button/Button';
 import OrderItem from '@/components/order/OrderItem';
 import OrderSummary from '@/components/order/OrderSummary';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { Item } from '@/types/item';
 
 export default function Cart() {
   const {
@@ -33,7 +33,7 @@ export default function Cart() {
   return (
     <div className="grid lg:grid-cols-2 gap-4">
       <div className="space-y-5">
-        {items.map((item) => (
+        {items.map((item: Item) => (
           <OrderItem item={item} key={item.id} />
         ))}
       </div>

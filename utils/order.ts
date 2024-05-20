@@ -1,7 +1,7 @@
 import { Order } from '@/types/order';
 import { STORAGE_ID } from '@/store/cart';
 
-export function fetchOrder(id: string): Promise<Order> {
+export function fetchOrder(id: string): Promise<Order | any> {
   return new Promise((resolve, reject) => {
     try {
       const cartStorage: any = localStorage.getItem(STORAGE_ID);

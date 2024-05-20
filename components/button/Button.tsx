@@ -6,7 +6,7 @@ export default function Button({
   ...props
 }: {
   children: ReactNode;
-  className: string;
+  className?: string;
   [props: string]: any;
 }) {
   return (

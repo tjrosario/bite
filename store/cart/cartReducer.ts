@@ -7,10 +7,10 @@ import {
   PLACE_ORDER,
   CLEAR_CART,
 } from '@/store/cart';
-import { CartState } from '@/types/cart';
+import { Item } from '@/types/item';
 import { getRandomInt } from '@/utils/random';
 
-export const initialState: CartState = { items: [], orders: [] };
+export const initialState: any = { items: [], orders: [] };
 
 export const initializer = (initialValue = initialState) => {
   if (typeof localStorage === 'undefined') {
@@ -30,7 +30,7 @@ export const getCartSummary = (state = initialState) => {
   const shipping = 599;
 
   const subtotal = state.items.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (acc: any, item: Item) => acc + item.price * (item.quantity || 1),
     0
   );
 
@@ -53,10 +53,10 @@ export const cartReducer = (state = initialState, action: any) => {
       return state;
 
     case ADD_TO_CART:
-      return state.items.find((item) => item.id === action.item.id)
+      return state.items.find((item: Item) => item.id === action.item.id)
         ? {
             ...state,
-            items: state.items.map((item) =>
+            items: state.items.map((item: Item) =>
               item.id === action.item.id
                 ? {
                     ...item,
@@ -73,14 +73,14 @@ export const cartReducer = (state = initialState, action: any) => {
     case REMOVE_FROM_CART:
       return {
         ...state,
-        items: state.items.filter((item) => item.id !== action.item.id),
+        items: state.items.filter((item: Item) => item.id !== action.item.id),
       };
 
     case UPDATE_ITEM_QUANTITY:
-      return state.items.find((item) => item.id === action.item.id)
+      return state.items.find((item: Item) => item.id === action.item.id)
         ? {
             ...state,
-            items: state.items.map((item) =>
+            items: state.items.map((item: Item) =>
               item.id === action.item.id
                 ? {
                     ...item,

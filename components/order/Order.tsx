@@ -2,12 +2,13 @@
 
 import { fetchOrder } from '@/utils/order';
 import { useEffect, useState } from 'react';
-import { Order } from '@/types/order';
+import { Order as IOrder } from '@/types/order';
 import OrderItem from '@/components/order/OrderItem';
 import OrderSummary from '@/components/order/OrderSummary';
+import { Item } from '@/types/item';
 
-export default function Order({ id }) {
-  const [order, setOrder] = useState<Order>(null);
+export default function Order({ id }: { id: string }) {
+  const [order, setOrder] = useState<IOrder | null>(null);
 
   useEffect(() => {
     async function getOrder() {
@@ -29,7 +30,7 @@ export default function Order({ id }) {
   return (
     <div className="grid lg:grid-cols-2 gap-4">
       <div className="space-y-5">
-        {order.items.map((item) => (
+        {order.items.map((item: Item) => (
           <OrderItem item={item} key={item.id} showActions={false} />
         ))}
       </div>

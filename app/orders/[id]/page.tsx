@@ -1,8 +1,6 @@
-import { Metadata } from 'next';
-import { Order as IOrder } from '@/types/order';
 import Order from '@/components/order/Order';
 
-export default async function Page({ params }) {
+export default function Page({ params }: { params: any }) {
   const { id } = params;
 
   return (
@@ -14,13 +12,4 @@ export default async function Page({ params }) {
       </div>
     </main>
   );
-}
-
-export async function generateMetadata({ params }): Promise<Metadata> {
-  const { id } = params;
-
-  return {
-    description: `Order Details`,
-    title: `Order Details`,
-  };
 }

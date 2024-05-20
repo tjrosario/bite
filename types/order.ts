@@ -1,4 +1,4 @@
-import { Item } from '@types/item';
+import { Item } from '@/types/item';
 
 export interface OrderTotals {
   shipping: number;
@@ -7,6 +7,7 @@ export interface OrderTotals {
 }
 
 export interface Order {
+  error?: string;
   id: number;
   items: Item[];
   totals: OrderTotals;

@@ -1,5 +1,5 @@
 import { Item } from '@/types/item';
-import { getCartSummary, useCart } from '@/store/cart';
+import { useCart } from '@/store/cart';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ export default function OrderItem({
   showActions = true,
 }: {
   item: Item;
-  showActions: boolean;
+  showActions?: boolean;
 }) {
   const {
     cartActions: { removeFromCart, updateItemQuantity },

@@ -42,7 +42,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       dispatch({
         type: GET_CART,
       }),
-    addToCart: async (item: Item) => {
+    addToCart: (item: Item) => {
       toast.success(`${item.name} added to cart!`, {
         position: 'bottom-right',
       });
